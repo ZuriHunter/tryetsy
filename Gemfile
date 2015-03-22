@@ -12,7 +12,7 @@ gem 'carrierwave-dropbox'
 gem 'carrierwave-aws'
 gem 'rmagick'
 gem 'fog'
-gem 'minimagick'
+
 
 group :production do
   gem 'pg'

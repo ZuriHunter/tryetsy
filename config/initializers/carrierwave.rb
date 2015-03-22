@@ -11,11 +11,11 @@
 CarrierWave.configure do |config|
   config.fog_credentials = {
     :provider => 'AWS',
-    :aws_access_key_id => ENV['AKIAIKGYKDF5ZUOMRS3Q'],
-    :aws_secret_access_key => ENV['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']
+    :aws_access_key_id => 'AKIAIKGYKDF5ZUOMRS3Q',
+    :aws_secret_access_key =>'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'
     }
   
-  config.fog_directory = ENV['AWS_S3_BUCKET']
+  config.fog_directory ='tryetsy'
   
 end
 
