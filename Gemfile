@@ -9,6 +9,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'carrierwave'
 gem 'carrierwave-dropbox'
+gem 'carrierwave-aws'
+gem 'rmagick'
+gem 'fog'
+gem 'minimagick'
 
 group :production do
   gem 'pg'
