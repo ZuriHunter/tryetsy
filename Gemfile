@@ -13,6 +13,7 @@ gem 'carrierwave-aws'
 gem 'rmagick'
 gem 'fog'
 gem 'figaro'
+gem 'mini_magick'
 
 
 group :production do
