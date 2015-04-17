@@ -1,23 +1,26 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-6">
+    <%= image_tag @listing.image_url(:medium) %>
+  </div>
+  <div class="col-md-6">
+    <h3> 
+      <%= @listing.name %>
+    </h3>
+    <h5>
+      <%= @listing.description %>
+    </h5>
+    <p>
+      <%= number_to_currency(@listing.price) %>
+    </p>
+  </div><!--colmd4-->
+</div><!--row-->
 
 <!--adds the image tag for the image recently uploaded-->
-<%= image_tag @listing.image_url (:medium) %>
+
 <!--adds the image tag for the image recently uploaded-->
 
-<p>
-  <strong>Name:</strong>
-  <%= @listing.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @listing.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @listing.price %>
-</p>
 
 <%= link_to 'Edit', edit_listing_path(@listing), class:"btn btn-link" %> |
 <%= link_to 'Back', listings_path, class:"btn btn-link" %>
