@@ -1,27 +1,27 @@
 <div class="center">
-  <h1>Listing listings</h1>
+      <h1>Listing listings</h1>
 
 
 
 
-     <div class="row">
-      <% @listings.each do |listing| %>
+         <div class="row">
+          <% @listings.each do |listing| %>
 
-        <div class="col-md-3">
-          <%= image_tag listing.image_url (:thumb) %>
-          <div class="caption">
-            <h3><%= listing.name %> </h3>
-            <p><%= number_to_currency(listing.price) %></p>
-          <%= link_to 'Show', listing %>
-          <%= link_to 'Edit', edit_listing_path(listing) %>
-          <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div><!--caption-->
-         </div><!--colmd3-->
-      <% end %>
-     </div><!--row-->
+            <div class="col-md-3">
+              <%= image_tag listing.image_url (:thumb) %>
+              <div class="caption">
+                <h3><%= listing.name %> </h3>
+                <p><%= number_to_currency(listing.price) %></p>
+              <%= link_to 'Show', listing %>
+              <%= link_to 'Edit', edit_listing_path(listing) %>
+              <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div><!--caption-->
+             </div><!--colmd3-->
+          <% end %>
+         </div><!--row-->
 
 
-  <br>
+        <br>
 
-  <%= link_to 'New Listing', new_listing_path %>
+      <%= link_to 'New Listing', new_listing_path %>
 </div><!--center-->

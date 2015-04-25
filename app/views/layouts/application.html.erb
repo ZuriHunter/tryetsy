@@ -15,7 +15,10 @@
   <%= render 'partials/header' %>
 
 <div class="container">
-<%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <!--allows for messages to be sent to user when being activted DEVISE --> 
+    <%= yield %>
   <%= render 'partials/footer' %>
   </div> 
  <!-- Latest compiled and minified JavaScript -->
