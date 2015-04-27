@@ -1,5 +1,9 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  #allows users the following actions when on the listings section...done through devise gem
+  before_filter :check_user, only: [:edit, :update, :destroy]
+  #check_user is a function created to see if the user is logged in when doing those methods edit, update and destroy
 
   # GET /listings
   # GET /listings.json
@@ -25,7 +29,7 @@ class ListingsController < ApplicationController
   # POST /listings.json
   def create
     @listing = Listing.new(listing_params)
-    @listing.user_id = current_user id
+    @listing.user_id = current_user.id
 
     respond_to do |format|
       if @listing.save
@@ -72,4 +76,10 @@ class ListingsController < ApplicationController
     def listing_params
       params.require(:listing).permit(:name, :description, :price, :image)
     end
+  
+  def check_user
+    if current_user != @listing.user
+      redirect_to root_url, alert: "Sorry, this listing belongs to someone else"
+      end
+  end
 end
