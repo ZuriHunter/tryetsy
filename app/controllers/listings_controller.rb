@@ -4,11 +4,16 @@ class ListingsController < ApplicationController
   #allows users the following actions when on the listings section...done through devise gem
   before_filter :check_user, only: [:edit, :update, :destroy]
   #check_user is a function created to see if the user is logged in when doing those methods edit, update and destroy
+  
+  def seller
+    @listings = Listing.where(user: current_user).order("created_at DESC")
+  end
+  
 
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all
+    @listings = Listing.all.order("created_at DESC")
   end
 
   # GET /listings/1

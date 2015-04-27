@@ -17,8 +17,8 @@
               
                 
             <% if (user_signed_in?) && (current_user == listing.user) %>
-             <!--- <%= link_to 'Edit', edit_listing_path(listing) %> -->
-             <!--<%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %> -->
+              <%= link_to 'Edit', edit_listing_path(listing) %>
+              <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
               </div><!--caption-->
              </div><!--colmd3-->
