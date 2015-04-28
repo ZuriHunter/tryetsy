@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+  resources :orders
+
  devise_for :users
- resources :listings
+ resources :listings do
+    resources :orders
+  end
+  #tells rails that the listingid number should be visible when orders page is being used
+  
+  
 
  get 'pages/about'
 
