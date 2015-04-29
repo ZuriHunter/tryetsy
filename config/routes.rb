@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
  devise_for :users
  resources :listings do
-    resources :orders
+   resources :orders, only: [:new, :create]
+   #controls what users can do when it comes to creating orders 
   end
   #tells rails that the listingid number should be visible when orders page is being used
   
@@ -13,7 +14,11 @@ Rails.application.routes.draw do
 
  get 'pages/contact'
   
-  get 'seller' => 'listings#seller'
+ get 'seller' => 'listings#seller'
+  
+ get 'sales' => 'orders#sales'
+  
+ get 'purchases' => 'orders#purchases'
 
  root 'listings#index'
   

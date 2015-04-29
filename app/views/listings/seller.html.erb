@@ -4,12 +4,12 @@
   <th class="center">Name</th>
   <th class="center">Description</th>
   <th class="center">Price</th>
-  <th class="center">Action</th>
+  <th>Action</th>
   </tr>
   
   <% @listings.each do |listing| %>
     <tr>
-      <td> <%= image_tag listing.image_url (:thumb) %></td>
+      <td><%= image_tag listing.image_url (:thumb) %></td>
       <td><%= listing.name %></td>
       <td><%= listing.description %></td>
       <td><%= number_to_currency(listing.price) %></td>
